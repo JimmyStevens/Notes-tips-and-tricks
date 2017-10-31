@@ -1,0 +1,13 @@
+[user]
+        name = Jimmy Stevens
+        email = donaldjstevens@gmail.com
+        poop = hopefully soft with a ghost wipe
+[remote "origin"]
+        prune = true
+[color]
+        ui = true
+[alias]
+        lg = log --oneline --decorate --all --graph
+
+[pull]
+        rebase = true

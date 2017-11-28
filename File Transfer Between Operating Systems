@@ -10,3 +10,8 @@ From the OS X system
 
 From the Windows system
 - open a browser and paste the forwarding address to access the files as if they are on the internet
+
+
+To move files from OS X to Ubuntu:
+
+scp -P 5502 /Users/jimmy/Downloads/SSL-Nginx/aetoscg-com_2017.key chartiq@149.5.84.50:~aetoscg-com_2017.key

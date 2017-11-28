@@ -1,0 +1,12 @@
+Moving files between Operating Systems
+
+OSX to Windows
+
+From the OS X system
+* Install ngrok via brew
+* cd into the desired directory and run the command `http-server`
+* open a second terminal and run ngrok http 8080 (or any desired port)
+* copy the http or https forwarding address
+
+From the Windows system
+- open a browser and paste the forwarding address to access the files as if they are on the internet

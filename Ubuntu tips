@@ -2,3 +2,7 @@ Ubuntu Tricks
 
 Status of all services: $ systemctl status
 List of all enabled services: $ systemctl list-unit-files | grep enabled
+List all active ports on an IP: $ nmap IP
+Filter (pipe) status of services in a directory: $ systemctl status | grep /example directory
+See all active ports on your server with IDs: $sudo netstat pln
+Shutdown/kill services: $ sudo kill PID# (as seen in $sudo netstat pln)

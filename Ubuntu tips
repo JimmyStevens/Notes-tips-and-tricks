@@ -1,0 +1,4 @@
+Ubuntu Tricks
+
+Status of all services: $ systemctl status
+List of all enabled services: $ systemctl list-unit-files | grep enabled

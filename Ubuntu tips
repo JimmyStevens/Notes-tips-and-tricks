@@ -6,3 +6,8 @@ List all active ports on an IP: $ nmap IP
 Filter (pipe) status of services in a directory: $ systemctl status | grep /example directory
 See all active ports on your server with IDs: $sudo netstat pln
 Shutdown/kill services: $ sudo kill PID# (as seen in $sudo netstat pln)
+Change Ownership, recursively, to users chartiq and www-data in directory srv: $ chown -R chartiq.www-data /srv
+Change permission modes recursively for users, groups, and global in directory /srv: $ sudo chmod -R 770 /srv
+  The fist digit (first 7) in 770 is the permission of users. 7 = the highest permissions. 
+  The second digit (second 7) in 770 is the permission of groups. 7 = the highest permissions.
+  The third digit (only 0) in 770 is the permission of global. 0 = the lowest permissions.

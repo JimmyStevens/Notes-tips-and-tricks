@@ -1,0 +1,15 @@
+General Oganization: Systems --> Services --> Processess
+
+Systems: Windows/Unix/Linux/Mac (https://www.howtogeek.com/howto/31632/what-is-the-linux-kernel-and-what-does-it-do/)
+
+Windows Systems: Services vs Process (Think serving items on demand vs processing things that are actively moving)
+
+http://compinfopro.com/services-processes/
+ - Windows systems run most services the remaining run through svchost.exe as DLLs
+  - services start processes
+  - services are user independent and run upon startup or are started upon demand
+   - processes include every running application
+   - processes are user dependent
+   - processes sometimes start services
+   
+ Unix Daemons: complete later

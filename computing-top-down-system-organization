@@ -12,4 +12,5 @@ http://compinfopro.com/services-processes/
    - processes are user dependent
    - processes sometimes start services
    
- Unix Daemons: complete later
+ Unix Daemons: complete later (https://unix.stackexchange.com/questions/144720/what-is-the-alternative-or-equivalent-to-windows-services-on-gnu-linux)
+ 

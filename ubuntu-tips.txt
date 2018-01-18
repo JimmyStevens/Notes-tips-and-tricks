@@ -26,4 +26,4 @@ Ubuntu Tricks
 
 10. To obtain logs run: tail -n <# of last logs> <location/logfile> or quicker with 50 lines run: tail -f <logfile>
 11. To change users run: sudo su -<username> or sudo su -<leave blank> and then you are the `root` user. 
-
+12. Systemd Service Unit Configuration manual: https://www.freedesktop.org/software/systemd/man/systemd.service.html

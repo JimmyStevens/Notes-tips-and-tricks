@@ -1,28 +1,29 @@
 Ubuntu Tricks
 
-Status of all services: $ systemctl status
+1. Status of all services: $ systemctl status
 
-List of all enabled services: $ systemctl list-unit-files | grep enabled
+2. List of all enabled services: $ systemctl list-unit-files | grep enabled
 
-List all active ports on an IP: $ nmap IP
+3. List all active ports on an IP: $ nmap IP
 
-Filter (pipe) status of services in a directory: $ systemctl status | grep /example directory
+4. Filter (pipe) status of services in a directory: $ systemctl status | grep /example directory
 
-See all active ports on your server with IDs: $sudo netstat pln
+5. See all active ports on your server with IDs: $sudo netstat pln
 
-Shutdown/kill services: $ sudo kill PID# (as seen in $sudo netstat pln)
+6. Shutdown/kill services: $ sudo kill PID# (as seen in $sudo netstat pln)
 
-Change Ownership, recursively, to users chartiq and www-data in directory srv: $ chown -R chartiq.www-data /srv
+7. Change Ownership, recursively, to users chartiq and www-data in directory srv: $ chown -R chartiq.www-data /srv
 
-Change permission modes recursively for users, groups, and global in directory /srv: $ sudo chmod -R 770 /srv
+8. Change permission modes recursively for users, groups, and global in directory /srv: $ sudo chmod -R 770 /srv
 
-  The fist digit (first 7) in 770 is the permission of users. 7 = the highest permissions. 
+    The fist digit (first 7) in 770 is the permission of users. 7 = the highest permissions. 
   
-  The second digit (second 7) in 770 is the permission of groups. 7 = the highest permissions.
+    The second digit (second 7) in 770 is the permission of groups. 7 = the highest permissions.
   
-  The third digit (only 0) in 770 is the permission of global. 0 = the lowest permissions.
+    The third digit (only 0) in 770 is the permission of global. 0 = the lowest permissions.
 
-To generate a random 32 digit password run: openssl rand -base64 32. 
+9. To generate a random 32 digit password run: openssl rand -base64 32. 
 
-To obtain logs run: tail -n <# of last logs> <location/logfile> or quicker with 50 lines run: tail -f <logfile>
+10. To obtain logs run: tail -n <# of last logs> <location/logfile> or quicker with 50 lines run: tail -f <logfile>
+11. To change users run: sudo su -<username> or sudo su -<leave blank> and then you are the `root` user. 
 

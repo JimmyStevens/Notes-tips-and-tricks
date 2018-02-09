@@ -1,0 +1,32 @@
+SSL is way over complicated. Here's what to do: 
+
+1. Obtain a key and a CSR on your computer/server (There are easy google sites that show you how to do this based on
+   your operating system)
+
+2. Send your CSR to the CA (There are easy google sites on how to do this). 
+
+3. Receive all the stupid files that come with your SSL certificate (certificate/intermediaries/roots/CA files).
+
+Step three is where a bunch of dumb-ass tech gurus confuse anyone learning how to do this. There is NO consistency. 
+
+4. Easy way to handle the junk from step 3. 
+  a - find the file that is labeled <your.domain.crt> and open it in a text editor, or do the following from command line 
+      if you want to stroke your ego (but figure the command line out on your own). 
+  b - open all other received files THAT DO NOT have the label 'root' or 'certificate authority'. 
+  c - one-by-one paste ALL the code from the opened files below the <your.domain.crt> code (DO NOT leave out all the weird
+      hash marks at the beginning and end of the file). 
+  d - open any files labled 'root' or 'certificate authority' and paste their code to the bottom of your 
+      <newly edited.your.domain.crt> file (it does not matter if 'root' code is before or after 'certificate authority code'. 
+  e - be a boyscout and label this newly edited file <your.domain.bundled.crt>
+  
+  
+  5. Put your .key file and newly bundled .crt file in correct locations per nginx instructions found in any easy to read
+     google search result. 
+     
+     
+     * Note to f*%k with your mind sometimes you get a .pem file. This file has the .key and the bundled.crt all in one file
+       and is used with your server application (nginx/apache/etc.)
+       
+       When your ego is better use this command, but only if you are awesome:
+       
+       (openssl x509 -noout -modulus -in _fideliscm_com.crt | openssl md5 ;\ openssl rsa -noout -modulus -in _fideliscm_comkey.txt | openssl md5) | uniq

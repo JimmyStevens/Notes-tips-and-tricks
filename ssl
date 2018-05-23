@@ -24,9 +24,20 @@ Step three is where a bunch of dumb-ass tech gurus confuse anyone learning how t
      google search result. 
      
      
+ *************************
+ 
+     
      * Note to f*%k with your mind sometimes you get a .pem file. This file has the .key and the bundled.crt all in one file
        and is used with your server application (nginx/apache/etc.)
        
-       When your ego is better use this command, but only if you are awesome:
-       
+ *************************
+ 
+ When your ego is better use this command, but only if you are awesome:
+      
+ Linux:
        (openssl x509 -noout -modulus -in _fideliscm_com.crt | openssl md5 ;\ openssl rsa -noout -modulus -in _fideliscm_comkey.txt | openssl md5) | uniq
+
+iOS: 
+openssl x509 -in <path> -noout -text
+
+The output of the commands in each respective operating system should advise on the status of the certificate. 

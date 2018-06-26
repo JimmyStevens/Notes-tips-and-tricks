@@ -1,10 +1,11 @@
-Git - from Command Line
+GIT - Command Line Version Control
 
 Background:
 1. What git does - git manages versions of your website 
 2. How to get git - Need to download the git application from the web for the operating system you are working on. 
 
-Where to begin:
+QUICK START:
+
 1. You need to access the directory on your computer where you will be running git
 	e.g. user\code
 		Then from here put in the command “git clone <url from GitHub>”
@@ -56,3 +57,180 @@ To update the git repo with all new branches
 To ‘merge’ master changes to the working branch
 checkout the working branch (branch to be updated)
 run “git merge master”
+
+-------------------------------------------------------------------------------------
+GIT Commands
+
+—————————
+Commands not fully understood
+
+git push -u origin <branch name>:  use this command after creating a new branch locally. This will remotely add a new branch with the same name and make it the origin of the local branch. The -u says this is the upstream remote source. 
+
+git push --set-upstream-to=origin <branch name>: NEED TO KNOW THE DIFFERENCE BETWEEN THIS AND THE NOTE ABOVE
+
+
+———————————
+Understood commands
+
+git merge —no-ff <feature_branch>: when performing a merge (git merge <branch name>) this is considered a fast forward merge because the master line becomes the end of the feature line. By saying “—no-ff” instead, the branch history shows that the feature line ‘merges into the end of the master line. Its the difference in the master changing its course (fast forward) vs. the feature branch changing its course instead (—no-ff). 
+
+git diff - -staged: allows you to see changes just staged
+
+git diff <branch1>..<branch2>: diff of tip of 2 branches
+
+git diff <branch1>…<branch2>: diff of parent of 2 branches
+
+git reset FILEname: allows you to unstage a file
+
+git checkout - - FILEname: allows to remove any created file
+
+git clean -f: force removes any untracked files
+
+git checkout . : removes any unstaged commits
+
+git branch BRANCHname: creates a new branch then git checkout to switch to that branch
+
+git checkout -b <BRANCHname>: creates a new branch and checks out the new branch in 1 step
+
+git branch -d <Branchname>: while on a separate branch (master) you can delete a local stale branch
+
+git branch -D <Branchname>: deletes a local branch even if there are changes that have not been merged to the remote branch. 
+
+git push origin :<BRANCHname>: deletes remote branch only. The space before the colon indicates there is no branch anymore for the Branchname therefore making it nothing. 
+
+git remote prune origin: deletes stale branches that no longer exist on the remote repo
+
+git help COMMAND: brings up notes on any command
+
+git config —local: to set configuration level for a single repo
+
+git config —global: to set a configuration level for a user
+
+git config —system: to set a configuration level for all users
+
+git config —<level> —list: this will list all the configs
+
+git config —<
+
+git config - -global user.name MYNAME: will set my user name across all repos on a given machine
+
+git commit -am “Note”: use -am with a commit when the changed file is already tracked. 
+
+git commit - -amend -m “New note”: use when you need to amend the previous commit. 
+
+git reset - -soft HEAD^: undoes a commit but won’t remove any created files
+
+git reset - -hard HEAD^: undoes everything in the most recent commit
+
+git remote add origin <web address to remote repo>
+
+git push -u origin <branch name> : add your branch to the remote repo and apply future settings for git pull with the ‘-u’
+
+git remote -v: looks at all the remotes and provides a “verbose” location or address. 
+
+git remote show origin: lists all the remote branches, local branches, and where local branches pull from and push to and tell if these branches are up to date or not. 
+
+TAGGING
+git tag: lists all tagged releases
+git tag <v#.#.#> -m “message”: adds a new tag/release
+git push - -tags: pushes the new tag to the remote repo
+
+git log: shows the SHA hash, author, date, and commit  message
+
+git config - -global color true: will emphasize the SHA hash
+
+git log - -oneline -p: shows what lines were modified in each commit
+
+git log - -oneline - -graph: shows visual of log history
+
+git blame <filename>: shows log of who, when, and what was changed in a file
+
+git rm —cached <file name>: tells git to stop tracking, but won’t delete from the file system. Running git status will display the file delete, but this only means it is no longer tracked.
+
+git config - -list: displays all the config settings
+
+git config alias.<newcommandname> <often used command>
+
+git rebase master: when the master branch has been modified before checking your working branch back in, this will move the working branch to the new head of master. 
+
+git rebase -i HEAD~<#>: allows you to alter previous commits. # indicates how commits before the current head.  
+
+reword: used after ‘rebase -i’ in the editor to change the commit description
+
+edit: used after ‘rebase -i’ in the editor to allow you to modify the commit. 
+
+squash: used after ‘rebase -i’ in the editor to allow you to merge 2 commits
+
+git stash save <add message in quotes>: takes current changes on your branch and puts them in a temporary stack and restores your working branch to its head with no commits. 
+
+git stash list: shows a list of all of the stashes that have been saved temporarily. 
+
+git stash list —stat: shows additional info about all items in the stash
+
+git stash apply <stash label>: applies Work In Progress (WIP) that you choose after seeing the list
+
+git stash drop <stash label>: removes the stashed work from the ‘list’ 
+
+git stash pop <stash label>: is a combo of git stash apply and git stash drop and defaults to the top of the ‘list’
+
+git stash save —keep-index: prevents the staging (add) area from being stashed
+
+git stash save —include-untracked: tells git to stash untracked files as well (they are normally ignored). 
+
+git stash show —patch <stash item>: provides more info
+
+git stash clear: empties and clears your stash. 
+
+git clone <repo name> <new repo name>: this clones your repo, incase you want to rewrite your commit history
+
+git filter-branch - -tree-filter <“shell command IN QUOTES!”>: to rewrite history with tree filter option. This checks out each commit into a working directory, runs the shell command, and then recommits the code. Example shell command: ‘rm -f passwords.txt’. Therefore in that case every commit will be opened and any file with passwords.txt will be removed. Adding to the end of the shell command, - -  - - all will then filter all commits in all branches. You can replace ‘all’ with ‘HEAD’ and this will only perform in the current HEAD. 
+
+git filter-branch —index-filter <git command>: this will filter against each commit without checking out the commit by working on the staging area (different than checking out). EX: git filter-branch - -index-filter ‘git rm - -cached - -ignore-unmatch passwords.txt’
+
+git filter-branch -f - -prune-empty - -  - -all: after deleting files from commits there may be commits with no contents. This command deletes commits that have no contents. 
+
+Auto-Correct formats for each OS git config - -global core.autocrlf input: changes line feed to carriage return/line feed (OS to Windows) if you are working in OSX/Linux
+
+git config - -global core.autocrlf true: changes line feed/carriage return to just carriage return if you are using Windows. 
+
+git config core.autocrlf false: does no conversion (if everyone works in the same windows environment. 
+
+If your branch has not settings then create your own ATTRIBUTES file. 
+.gitattributes = located at the project root
+FileType	ConversionSettins
+<*		text = auto>
+<*.html	text>
+<*.css	text>
+<*.bat	text eol=crlf>
+<*.sh	text eol=lf>
+<*.jpg	binary>
+
+git cherry-pick <hash from branch commit we want>: grabs a commit from another branch and adds it to the branch you want this commit in
+
+git cherry-pick - -edit <hash>:grabs a commit from another branch and then gives it a commit message you want. 
+
+git cherry-pick - -no-commit <hash><hash>: grabs multiple commits we want and applies them but does not make a commit
+
+git cherry-pick -x <hash>: the dash ‘x’ option will keep the original hash so you know where the commit came from. 
+
+git cherry-pick - -signoff <hash>: when cherry-picking the dash dash ‘signoff’ will track who cherry-picked
+
+git submodule add <git repo url>: adds a git repo in a git repo, this is known as a submodule. 
+
+git add <submodule directory>: this needs to be completed any time a submodule is modified to point the parent repo to the updated submodule
+
+git submodule init: used when you pull down a repo for the first time that has submodules in it
+
+git submodule update: this pulls down/clones the submodules into the parent project
+
+git submodule update: this pulls down updates to your submodules
+
+git push —recurse-submodules=check: aborts a push if the submodules have not been pushed yet
+
+git push - -recurse-submodules=on-demand: used when pushing the parent but checks to see if any submodules need pushing and will push those as well if any are present. 
+
+git config alias.pushall “push - -recurse-submodules=on-demand: this aliases the command to ‘pushily’ for simplicity
+
+git reflog: shows list of all commits independent of branch on your repo. 
+
+git log —walk-reflogs: gives more detail about all commits independent of branch  on your repo. 

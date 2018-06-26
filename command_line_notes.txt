@@ -1,0 +1,55 @@
+Command Line Interface (CLI) - Global
+
+Background: 
+CLI for the Windows = Command Line
+
+CLI for OSX/LINUX = Terminal 
+
+For these notes the term ‘terminal’ will be used to mean any operating 
+system unless otherwise noted. 
+
+The terminal allows users to access and modify directories and files 
+without leaving the keyboard. As well, there are some applications for 
+modifying API’s that can only be accessed through the command line. 
+
+
+Using Mac Terminal Only 
+Some of the commands below may work on the Windows command line but are 
+not guaranteed. There will be/is a different section below for Windows 
+command line.
+
+Where to begin:
+	To access the terminal open your launchpad (the rocket ship on your dock) 
+  and double click the icon that looks like a small black screen with a >_ 
+  in it. 
+  * If this doesn’t work then use Google to find it on your computer
+
+
+Useful Commands: these work in any directory
+
+Help info about a command
+“man <any command>” = will tell you what an unknown command does
+
+“pwd” = print working directory. This tells you the path to the directory you are in
+“ls” = list all folders and files in the directory
+“cd <directory path>” = change directory
+“cd .. “= change directory up one
+	cd ../<directory path> = move up a directory and down to a directory
+mkdir = creates a new directory(folder)
+touch = creates a new file (*need to add the file type to the file)
+ls -a = show all dot files/folders(directories) which are hidden files (.hiddenexample)
+ls -l = shows all contents of a directory in long format
+ls -alt = shows all contents of a directory including hidden files
+cp = copy
+	cp sample1.txt sample2.txt will copy sample1 into sample2 and replace it. 
+	or you can copy a file and put it in a new directory
+	*when using cp the first items are the copies and the last item is the directory where all the files are sent
+exit = exits the program, will need to then close the terminal and reopen
+
+‘control’ + c = closes the current terminal program running
+
+
+Terminal: Command “Prompt” for Windows
+dir = ls (from OSX)
+sc = command for managing services
+‘control’ + c = close the branch

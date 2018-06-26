@@ -1,0 +1,58 @@
+Git - from Command Line
+
+Background:
+1. What git does - git manages versions of your website 
+2. How to get git - Need to download the git application from the web for the operating system you are working on. 
+
+Where to begin:
+1. You need to access the directory on your computer where you will be running git
+	e.g. user\code
+		Then from here put in the command “git clone <url from GitHub>”
+2. Once you have designated a directory then the commands below can be used only in that directory.
+
+**Commands: always begin with ‘git’**
+
+To check the status of your branch
+ “git status”
+ - use this command when in a checkout directory to see what files you made changes to in your branch
+
+To access a cloned branch
+“git checkout <branch name>”
+ - this opens the branch to be worked on i.e. ‘master’, or ‘any branch that you created’
+
+To create a new branch
+“git checkout -b <new branch name>”
+ - the -b signifies creating a new branch to be working on 
+ - this branch will need to be saved, stashed or deleted before moving to a new branch
+
+- for new clients use: “git checkout v<lastest> && git checkout -b client-<newclient>”
+
+To save a branch with modifications
+1. “git add .”
+ - this stages files to be saved
+ - while in the repo you are working on you can add all the changes you want before you are ready to commit all the changes. This is like fixing many different parts on a car before giving it back to the customer instead of giving it to the customer over and over after each little thing is fixed. 
+2. “git commit -m <“message in quotes with small description of changes”>”
+ - this sends a message to commit a file with a description of the changes
+	**if you only add one change from (1.) above then you can simply put in the command “git -am <“description”>”. This allows you to combine steps 1. and 2. quickly. 
+3. “git push origin <file name>”
+ - this overwrites the copy that was checked out with the new changes that were made locally
+
+To delete a branch locally   
+You must begin on a branch other than the one you intend to delete
+“git branch -d <branch name>”
+
+To save changes that you are not ready to push - this is ‘stashing’
+“git stash”
+ - this will take what you have worked on and ‘pack it up’ for you to work on later
+ - and it will return a #tag to reference later
+“git stash apply”
+ - this will ‘unpack’ what you were working on
+*BE CAREUL, the command ‘git stash apply’ will unpack whatever was stashed into the repo you are currently working. 
+
+To update the git repo with all new branches
+“git fetch”
+ - this will add any new branches to the repo so that they may be checked out
+
+To ‘merge’ master changes to the working branch
+checkout the working branch (branch to be updated)
+run “git merge master”

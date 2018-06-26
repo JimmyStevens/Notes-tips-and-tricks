@@ -1,0 +1,18 @@
+NGINX
+
+Background:
+1. What nginx does - this is a virtual web server that delivers the webpage to the user
+2. How to get nginx - Need to download the nginx application from the web for the operating system you are working on and save it in a directory specific to nginx
+
+Where to begin:
+1. follow the wiki on how to set up the configs
+
+To start nginx
+“nginx start /b nginx”
+
+To restart nginx
+“nginx -s reload”
+ - this must be performed every time any nginx config is changed
+
+To stop nginx (when removing nginx do this FIRST!)
+“taskkill /IM nginx.exe /F

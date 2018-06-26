@@ -1,0 +1,33 @@
+pm2 
+
+pm2 is a Windows service (daemon in Unix-like OS systems) server for NodeJS applications. 
+
+pm2 can be found and downloaded online. 
+To install, open the CLI on windows and enter the command, 
+	“npm install -g pm2” 
+   *The ‘-g’ installs pm2 globally
+
+Start pm2
+“pm2 start <file: i.e. engines.json>”
+- this will start the processes in the file and will then return a status table
+
+To check the engine logs - can be done globally
+“pm2 log”
+- this will display the logs for all the processes using pm2
+To exit this log enter “control+c” while in the active command line. 
+
+Check status 
+“pm2 list”
+- this will create a spreadsheet with data about each process using pm2 
+
+Stop pm2
+“pm2 kill”
+- this will stop all pm2 processes
+
+Clear logs
+“pm2 flush”
+- this will clear all prior logs of any pm2 processes
+
+
+
+

@@ -37,6 +37,18 @@ Step three is where a bunch of dumb-ass tech gurus confuse anyone learning how t
        (openssl x509 -noout -modulus -in _fideliscm_com.crt | openssl md5 ;\ openssl rsa -noout -modulus -in _fideliscm_comkey.txt | openssl md5) | uniq
 
 iOS: 
-openssl x509 -in <path> -noout -text
+cat <filepath> | openssl x509 -enddate -noout
+
+
+Tranlation
+cat        = readonly
+<filepath> = the file you want inspected
+|          = pipe the previous stuff through the command to follow
+openssl    = 'interact with'
+x509       = standard command to begin interacting with a certificate
+-enddate   = obtain date the certificate expires
+-noout     = do not print the certificate file code (this is messy useless data for the purpose of getting a date)
+
+
 
 The output of the commands in each respective operating system should advise on the status of the certificate. 

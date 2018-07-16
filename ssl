@@ -10,8 +10,7 @@ SSL is way over complicated. Here's what to do:
 Step three is where a bunch of dumb-ass tech gurus confuse anyone learning how to do this. There is NO consistency. 
 
 4. Easy way to handle the junk from step 3. 
-  a - find the file that is labeled <your.domain.crt> and open it in a text editor, or do the following from command line 
-      if you want to stroke your ego (but figure the command line out on your own). 
+  a - find the file that is labeled <your.domain.crt> and open it in a text editor, or do the following from command line  
   b - open all other received files THAT DO NOT have the label 'root' or 'certificate authority'. 
   c - one-by-one paste ALL the code from the opened files below the <your.domain.crt> code (DO NOT leave out all the weird
       hash marks at the beginning and end of the file). 

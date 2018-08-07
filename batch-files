@@ -1,0 +1,16 @@
+Use this site to instruct how to run batch files in OSX
+
+https://www.alvinpoh.com/how-to-make-and-run-batch-files-in-terminal-in-mac-osx/
+
+And here is a sample batch file to run...
+//
+
+@echo off
+cls
+echo
+echo this is a simple program.
+pause
+
+//
+
+name it whatever-you-want.bat

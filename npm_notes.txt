@@ -1,0 +1,12 @@
+Node Package Manager (NPM) is a tool required to successfully run many webpages and applications. It allows users to
+share open source code to accomplish tasks that are similar across many applications. 
+
+Node: One or several files of code where each bit of code is independant and does one specific job in an application.
+
+Package: a file of folder containing a package.json file
+  - the package.json file is at the root of the node application and provides the node with metadata necessary to run
+    the application. This data includes 'name:foo', 'version:bar', and not required but typically 'dependencies:foo', 
+    as well as many other fields.
+
+Module: any file of folder that is loaded via 'require' in a Node.js application
+  -  packages can be in modules, but a package is not necessarily a module. 

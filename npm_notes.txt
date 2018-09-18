@@ -10,3 +10,23 @@ Package: a file of folder containing a package.json file
 
 Module: any file of folder that is loaded via 'require' in a Node.js application
   -  packages can be in modules, but a package is not necessarily a module. 
+  
+
+List of Node modules I have been exposed too and their description:
+
+chalk: styling for terminal strings
+child_process: provides the ability to spawn child processes in a manner that is similar, but not identical to popen (3)
+death: when termination signals are sent to your process this allows for graceful clean up of leftover data structures
+       and other unwanted materials from memory and the filesystem
+del: delete files and folders using globs (wildcard searches ie appending '*' or '?' to the keyword search.
+fs: provides functionality to access and interact with the file system
+gulp: toolkit that helps automate time-consuming tasks in development workflow
+pretty-hrtime: used to display elapsed time in a pretty high resolution format
+gulp-watch: uses chokidar to improve the use of 'fs' by speeding up the process
+openfin-launcher: downloads and launches the OpenFin Runtime
+shelljs: portable implementation of Unix shell commands on the Node.js API. This provides the ability to eliminate
+         dependency on Unix while maintaining familiarity. Portable means it can be used with Windows, Linx, and OSX
+path: this module varies based on the OS and will assume the OS's style of path's are being used
+webpack: bundles modules for use in a browser, but can transform, bundle, or package just about any resource/asset
+async: provides functions for working with asynchronous JavaScript. 
+

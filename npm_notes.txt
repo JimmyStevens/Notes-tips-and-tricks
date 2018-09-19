@@ -28,5 +28,6 @@ shelljs: portable implementation of Unix shell commands on the Node.js API. This
          dependency on Unix while maintaining familiarity. Portable means it can be used with Windows, Linx, and OSX
 path: this module varies based on the OS and will assume the OS's style of path's are being used
 webpack: bundles modules for use in a browser, but can transform, bundle, or package just about any resource/asset
-async: provides functions for working with asynchronous JavaScript. 
-
+async: provides functions for working with asynchronous JavaScript
+uglifyjs-webpack-plugin: uses uglify-js to minify JavaScript
+hard-source-webpack-plugin: uses webpack to provide an intermediate caching step for modules

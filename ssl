@@ -31,7 +31,18 @@ Step three is where a bunch of dumb-ass tech gurus confuse anyone learning how t
        
  *************************
  
+ To generate a CSR from any *nix machine for any OS machine use the following command:
+ 
+ $ openssl req -new -newkey rsa:2048 -nodes -keyout <any name.key> -out cap.csr
+ 
+ This will generate 2 files: a <name>.csr, and a <name>.key file in the directory where the command was performed. 
+ 
+ Send the <name>.csr file to the Certificate Authority (CA) of choice and once the <name>.crt is received complete
+ server install with the pairing of the <name>.key and <name>.crt files. 
+ 
+ *************************
  When your ego is better use this command, but only if you are awesome:
+ NOTE* what are these command doing???
       
  Linux:
        (openssl x509 -noout -modulus -in _fideliscm_com.crt | openssl md5 ;\ openssl rsa -noout -modulus -in _fideliscm_comkey.txt | openssl md5) | uniq

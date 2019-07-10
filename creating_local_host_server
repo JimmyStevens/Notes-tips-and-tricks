@@ -1,0 +1,42 @@
+#### Detailed Steps
+
+1. (Optional) Create a folder for our server called `server`.
+
+2. In the 'server' folder initialize a new node project by running `npm init` (choosing the default for all prompts by pressing enter until finished).
+
+3. Install dependencies by running `npm install express cors morgan nodemon`.
+
+-   `express` runs the server
+
+-   `cors` allows us to permit cross origin resource sharing
+
+-   `morgan` is for logging (optional but recommended)
+
+-   `nodemon` is for live reloading the server in development (optional but recommended)
+
+5. Create a file for the server called `index.js`
+
+6. Write/copy the following into `index.js`:
+
+```
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
+
+const PORT = process.env.PORT || 9001;
+const app = express();
+app.use(cors());
+app.use(morgan("dev"));
+
+app.get("/test", (req, res) => {
+  res.send("server up and running");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server listening at ${PORT}`);
+});
+```
+
+-   This is boilerplate to set up the server. It sets up a server that will run on port 9001 that will respond with `server up and running` to GET requests to `/test` (e.g. `localhost:9001/test`). It will also log requests.
+
+7. Add start script to the node project by adding `"start": "nodemon index.js"` to your `package.json` scripts.
